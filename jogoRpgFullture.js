@@ -215,6 +215,13 @@ let escolha3 = prompt(`O que você quer fazer?
 
     `)
 
+    do (escolha3 === !escolha3)
+    while (escolha3 === !escolha3) {
+
+        alert(`Opção inválida! Escolha a letra "A" ou "B".`)
+
+    }
+
     if (escolha3 === "A") {
      
      
