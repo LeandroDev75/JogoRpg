@@ -152,7 +152,9 @@ Tudo parece estar indo bem até que todos começam
 a ouvir um ruído arrepiante surgindo em meio a suas 
 vozes, o clima alegre se dissipa repentinamente, 
 todos ficam alertas e em silêncio, tentando observar 
-o que os espera pela frente.`)
+o que os espera pela frente.
+
+Clique em "Ok" para continuar!`)
     }
 
 else if (escolha2 === "B") {
@@ -208,6 +210,8 @@ Clique em "Ok" para continuar!
 
 `);
 
+//----------------------------------------------------------------------
+
 let escolha3;
 
 do {
@@ -231,18 +235,18 @@ escolha3 = prompt(`O que você quer fazer?
   
 if (escolha3 === "A") { 
     
-    player.vida += 200;
+    player.hp += 200;
     player.dano += 30;
      
 alert(`Lutar contra <exercito de esqueletos>: Status dos esqueletos:   
     recompensa: colar de ossos: +30de dano Poção de +200 HP
     
-    Você ganhou ${player.vida} de HP de vida e ${player.dano} de Dano de ataque.
+    Você ganhou 200 de HP de vida e 30 de Dano de ataque.
 
-    Você tem ${player.vida} de HP de vida e ${player.dano} de Dano de ataque. 
+    Você tem ${player.hp} de HP de vida e ${player.dano} de Dano de ataque. 
     `);  
 
-//---------------------------------------------------------------
+//---------------
 
 let escolha3_1;
 
@@ -251,23 +255,23 @@ escolha3_1 = prompt(`Agora escolha o caminha A ou B para proceguir.`).toUpperCas
 
    if (escolha3_1 !== "A" && escolha3_1 !== "B") {
    
-    (`Opção inválida! Escolha a letra "A" ou "B".`)
+    alert(`Opção inválida! Escolha a letra "A" ou "B".`)
 
    }
     
-} while (escolha3_1 !== "A" && escolha3_1 === "B")
+} while (escolha3_1 !== "A" && escolha3_1 !== "B");
 
     if (escolha3_1 === "A") {
      
-`Finalmente o Exército foi conquistado! 
+alert(`Finalmente o Exército foi conquistado! 
 Uma sesação de paz invade cada centímetro da câmara... 
 Num piscar de olhos você está em uma planície muito 
 peculiar e ao mesmo tempo familiar também... 
-você percebe que está diante de três portas...`  
+você percebe que está diante de três portas...`)  
 
     } else {
 
-`Não foi dessa vez que você derrotou o antigo Exército de Esqueletos... tudo fica escuro e quieto...`
+alert(`Não foi dessa vez que você derrotou o antigo Exército de Esqueletos... tudo fica escuro e quieto...`)
 
     }
 
@@ -278,30 +282,38 @@ pilar de pedra e perde a consciência...`);
 
     }
     
-let escolha4;    
+//----------------------------------------------
+
+    let escolha4;    
 
 do {
+    
+
 escolha4 = prompt(`O que você deseja fazer?
     
-    Escolha uma opção;
+    Para proceguir, escolha uma opção;
 
-    A
-    B
-    C
+    A, B ou C `).toUpperCase();
+
+    if(escolha4 !== "A" && escolha4 !== "B" && escolha4 !== "C") {
+
+        alert(`Opção inválida! Escolha a letra A, B ou C`)
+
+    }
     
-    `)
+
 } while (escolha4 !== "A" && escolha4 !== "B" && escolha4 !== "C"); 
 
 if (escolha4 === "A") {
  
-    `
+ alert(`
 Você escolhe a Porta de Ouro. Atrás dela você encontra
 muito ouro, cristais, etc... você começa a imaginar toda 
 a glória e poder que poderá onter com este tesouro 
 praticamente infinito. Assim que você toca a primeira 
 moeda a seu alncace uma voz grave e ecoante chama seu nome... 
 "Então você prefere assim? Acha que seria fácil?"... 
-o ${player.inimigo} surge com uma aura de poder nunca antes vista...`
+o ${player.inimigo} surge com uma aura de poder nunca antes vista...`)
     
 }
 
