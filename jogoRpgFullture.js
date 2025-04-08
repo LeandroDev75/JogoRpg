@@ -313,11 +313,11 @@ a glória e poder que poderá onter com este tesouro
 praticamente infinito. Assim que você toca a primeira 
 moeda a seu alncace uma voz grave e ecoante chama seu nome... 
 "Então você prefere assim? Acha que seria fácil?"... 
-o ${player.inimigo} surge com uma aura de poder nunca antes vista...`)
+o ${inimigo.nome} surge com uma aura de poder nunca antes vista...`)
     
 }
 
-else if (escolha4 === "B") {`
+else if (escolha4 === "B") { alert(`
 
 Você escolhe a Porta de Ferro, após atravessa-la tudo 
 a sua volta desaparece, o infinito é seu novo horizonte... 
@@ -326,14 +326,58 @@ alguém chamando por seu nome... "Finalmente você conseguiu
 chegar até minha morada... Seus passos até aqui não foram 
 fáceis, não espere nenhum tipo de alívio agora..."
 
-`} 
+`)} 
 
-else {`
+else { alert(`
 
 Você escolhe a Porta da Casa dos seus Pais. ao atravessa-la você se sente quente e cada vez mais pesado, estranhamente isso não o incomoda...
 
-`}
+`)}
 
+player.hp += 8000;
+
+alert(`
+Lutar contra ${inimigo.nome}: Status do Inimigo:   
+
+Recompensa: União dos povos: Você ganhou 8000 de HP vida e paz mundial por 1 ano.
+
+Você tem ${player.hp} de HP de vida e ${player.dano} de Dano de ataque
+
+`);
+
+let escolha5;
+
+do {
+
+    escolha5 = prompt(`Você tem 2 caminhos para seguir!
+        
+        Escolha o caminho A ou o Caminho B para prosseguir.
+        
+        `).toUpperCase();
+
+    if(escolha5 !== "A" && escolha5 !== "B") {
+
+alert(`Opção inválida! Escolha a letra A, B ou C`);
+
+    }
+
+} while (escolha5 !== "A" && escolha5 !== "B")
+
+
+if (escolha5 === "A") {
+
+alert
+(`O ${inimigo.nome} não mais nos assombrará! 
+É hora de voltar a vila e comemorar com o povo...`)    
+
+} else {
+
+    alert(`
+Por quantos séculos mais ${inimigo.nome} 
+reinará nas sobras de nosso vale? 
+Tudo fica escuro e quieto...`)
+
+}
 
 
     
