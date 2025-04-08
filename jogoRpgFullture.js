@@ -164,7 +164,7 @@ else if (escolha2 === "B") {
 
    let escolha2_1 = prompt(`O que você quer fazer? 
             
-            Escolha a opção "A" ou "B" para processeguir.`)
+            Escolha a opção "A" ou "B" para processeguir.`).toUpperCase();
 
                         
             if (escolha2_1 === "A") {
@@ -229,21 +229,35 @@ escolha3 = prompt(`O que você quer fazer?
     
  } while (escolha3 !== "A" && escolha3 !== "B") 
   
-if (escolha3 === "A") {     
+if (escolha3 === "A") { 
+    
+    player.vida += 200;
+    player.dano += 30;
      
-alert(`Lutar contra <exercito de esqueletos>: Status dos esqueletos:   recompensa: colar de ossos: +30de dano Poção de +200 HP`);  
+alert(`Lutar contra <exercito de esqueletos>: Status dos esqueletos:   
+    recompensa: colar de ossos: +30de dano Poção de +200 HP
+    
+    Você ganhou ${player.vida} de HP de vida e ${player.dano} de Dano de ataque.
+
+    Você tem ${player.vida} de HP de vida e ${player.dano} de Dano de ataque. 
+    `);  
+
+//---------------------------------------------------------------
 
 let escolha3_1;
 
 do {
-escolha3_1 = prompt(`Escolha uma opção:
-    
-   - A
-   - B `)
+escolha3_1 = prompt(`Agora escolha o caminha A ou B para proceguir.`).toUpperCase();
+
+   if (escolha3_1 !== "A" && escolha3_1 !== "B") {
+   
+    (`Opção inválida! Escolha a letra "A" ou "B".`)
+
+   }
     
 } while (escolha3_1 !== "A" && escolha3_1 === "B")
 
-    if (escolha3_1 === A) {
+    if (escolha3_1 === "A") {
      
 `Finalmente o Exército foi conquistado! 
 Uma sesação de paz invade cada centímetro da câmara... 
@@ -290,6 +304,23 @@ moeda a seu alncace uma voz grave e ecoante chama seu nome...
 o ${player.inimigo} surge com uma aura de poder nunca antes vista...`
     
 }
+
+else if (escolha4 === "B") {`
+
+Você escolhe a Porta de Ferro, após atravessa-la tudo 
+a sua volta desaparece, o infinito é seu novo horizonte... 
+alguns minutos se passam até que você consegue escutar 
+alguém chamando por seu nome... "Finalmente você conseguiu 
+chegar até minha morada... Seus passos até aqui não foram 
+fáceis, não espere nenhum tipo de alívio agora..."
+
+`} 
+
+else {`
+
+Você escolhe a Porta da Casa dos seus Pais. ao atravessa-la você se sente quente e cada vez mais pesado, estranhamente isso não o incomoda...
+
+`}
 
 
 
