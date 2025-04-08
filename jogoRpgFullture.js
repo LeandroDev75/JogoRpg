@@ -262,7 +262,36 @@ você percebe que está diante de três portas...`
 Ao Sair correndo você bate com a cabeça num 
 pilar de pedra e perde a consciência...`);
 
-    } 
+    }
+    
+let escolha4;    
+
+do {
+escolha4 = prompt(`O que você deseja fazer?
+    
+    Escolha uma opção;
+
+    A
+    B
+    C
+    
+    `)
+} while (escolha4 !== "A" && escolha4 !== "B" && escolha4 !== "C"); 
+
+if (escolha4 === "A") {
+ 
+    `
+Você escolhe a Porta de Ouro. Atrás dela você encontra
+muito ouro, cristais, etc... você começa a imaginar toda 
+a glória e poder que poderá onter com este tesouro 
+praticamente infinito. Assim que você toca a primeira 
+moeda a seu alncace uma voz grave e ecoante chama seu nome... 
+"Então você prefere assim? Acha que seria fácil?"... 
+o ${player.inimigo} surge com uma aura de poder nunca antes vista...`
+    
+}
+
+
 
     
 
