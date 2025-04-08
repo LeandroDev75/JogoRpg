@@ -1,5 +1,5 @@
 //função para iniciar o jogo e dar boa vindas
-function iniciarJogo() {
+
 alert("Bem-vindo ao jogo RPG Fullture!"); 
 
 
@@ -140,7 +140,7 @@ Você perdeu 200 HP de vida!`
 
 player.hp -= 200;
 
-alert(`Você tem ${hp} de HP de vida e ${dano} de Dano`)
+alert(`Você tem ${player.hp} de HP de vida e ${player.dano} de Dano de ataque`);
         
     } else if (escolha2 === "A" && escolhaAleatoria2 == false) {
         alert(`
@@ -202,43 +202,72 @@ alert(`Você tem ${player.hp} de HP de vida e ${player.dano} de Dano`)
  alert(`
 Ao olhar adiante, sua equipe depara-se com um grupo de esqueletos dispostos em uma formação ameaçadora. Suas figuras ósseas parecem animadas e prontas para o combate enquanto ficam próximas a um cristal que emite uma luz fraca. As órbitas vazias dos olhos focam em você com uma intensidade sinistra conforme você se aproxima cautelosamente, sentindo a presença ameaçadora dos mortos-vivos.
 
-Você tem ${player.vida} de HP de vida e ${player.dano} de ataque.
+Você tem ${player.hp} de HP de vida e ${player.dano} de ataque.
+
+Clique em "Ok" para continuar!
 
 `);
 
-let escolha3 = prompt(`O que você quer fazer?
+let escolha3;
+
+do {
+escolha3 = prompt(`O que você quer fazer?
 
     Opções:
 
     A - Lutar
     B - Correr
 
-    `)
+    Digite a letra A ou B
 
-    do (escolha3 === !escolha3)
-    while (escolha3 === !escolha3) {
+    `).toUpperCase();
+
+    if (escolha3 !== "A" && escolha3 !== "B" ) {
 
         alert(`Opção inválida! Escolha a letra "A" ou "B".`)
+    }
+    
+ } while (escolha3 !== "A" && escolha3 !== "B") 
+  
+if (escolha3 === "A") {     
+     
+alert(`Lutar contra <exercito de esqueletos>: Status dos esqueletos:   recompensa: colar de ossos: +30de dano Poção de +200 HP`);  
+
+let escolha3_1;
+
+do {
+escolha3_1 = prompt(`Escolha uma opção:
+    
+   - A
+   - B `)
+    
+} while (escolha3_1 !== "A" && escolha3_1 === "B")
+
+    if (escolha3_1 === A) {
+     
+`Finalmente o Exército foi conquistado! 
+Uma sesação de paz invade cada centímetro da câmara... 
+Num piscar de olhos você está em uma planície muito 
+peculiar e ao mesmo tempo familiar também... 
+você percebe que está diante de três portas...`  
+
+    } else {
+
+`Não foi dessa vez que você derrotou o antigo Exército de Esqueletos... tudo fica escuro e quieto...`
 
     }
 
-    if (escolha3 === "A") {
-     
-     
-let lutar1 = prompt (`Lutar contra <exercito de esqueletos>: Status dos esqueletos:   recompensa: colar de ossos: +30de dano Poção de +200 HP`);  
 
     } else { alert(`
 Ao Sair correndo você bate com a cabeça num 
 pilar de pedra e perde a consciência...`);
 
-    }
+    } 
 
     
 
     
 
 
-}
 
-iniciarJogo();
 
