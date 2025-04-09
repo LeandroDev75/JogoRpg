@@ -51,11 +51,13 @@ alert(`${player.nome}, você começa sua jornada com ${player.hp} HP de vida e $
 
 
     alert(`Mensagem: Então ${nome}, já se passaram alguns dias desde que você
-    se juntou à Exploração de Dungeon, e você estava se preparando para sua 
-    primeira incursão em uma masmorra! Após alguns dias de viagem, você chega
-    à entrada da misteriosa masmorra. Você está cheio de expectativas enquanto
-    se aproxima. A entrada da masmorra está diante de você, escura e ameaçadora.
-    As paredes de pedra são escorregadias de umidade, e o ar cheira a mofo e decomposição.
+    se juntou à Exploração de Dungeon, e você estava se preparando
+    para sua primeira incursão em uma masmorra! Após alguns dias 
+    de viagem, você chega à entrada da misteriosa masmorra. 
+    Você está cheio de expectativas enquanto se aproxima. 
+    A entrada da masmorra está diante de você, escura e 
+    ameaçadora. As paredes de pedra são escorregadias de 
+    umidade, e o ar cheira a mofo e decomposição.
     
     Clique no botão "Ok" para continuar!`);
 
@@ -89,11 +91,24 @@ else if (escolha1 === 'B') {
   const escolhaAleatoria = Math.random() < 0.5;
 
   if (escolhaAleatoria) {
-    alert(`" Você decide explorar a área circundante. Após uma busca sem resultados na área, você se dirige à masmorra, aceitando a tranquilidade antes do desafio iminente. Embora sem descobertas notáveis, a expectativa cresce enquanto você se prepara para adentrar a dungeon. 
+    alert(`" Você decide explorar a área circundante. 
+        Após uma busca sem resultados na área, você se dirige à masmorra, 
+        aceitando a tranquilidade antes do desafio iminente. 
+        Embora sem descobertas notáveis, a expectativa cresce enquanto 
+        você se prepara para adentrar a dungeon. 
         Clique no botão "Ok" para continuar!`);
 
   } else {
-    alert(`"Você decide explorar a área circundante, esperando encontrar pistas ou recursos valiosos que possam ajudá-lo em sua missão. Enquanto explora, nota algumas marcas entalhadas nas árvores próximas que lhe deixam curioso, você continua a busca e finalmente descobre algo: um frasco misterioso escondido entre as folhas caídas, ele contém uma substância brilhante de cor azul intensa. Intrigado, você examina mais de perto o frasco e percebe que se trata de uma poção mágica. A etiqueta, escrita em uma língua antiga, sugere que a poção tem propriedades de cura."
+    alert(`"Você decide explorar a área circundante, esperando 
+        encontrar pistas ou recursos valiosos que possam 
+        ajudá-lo em sua missão. Enquanto explora, nota algumas 
+        marcas entalhadas nas árvores próximas que lhe deixam 
+        curioso, você continua a busca e finalmente descobre algo: 
+        um frasco misterioso escondido entre as folhas caídas, 
+        ele contém uma substância brilhante de cor azul intensa. 
+        Intrigado, você examina mais de perto o frasco e percebe 
+        que se trata de uma poção mágica. A etiqueta, escrita em 
+        uma língua antiga, sugere que a poção tem propriedades de cura."
         
         Você ganhou 500 HP de vida!`);
     
@@ -159,7 +174,11 @@ Clique em "Ok" para continuar!`)
 
 else if (escolha2 === "B") {
 
-    alert(`Ao analisar o interior da caverna, você nota que o piso está repleto de ossos de animais, deixando o cheiro pútrido ainda mais evidente, você começa a observar as paredes da caverna e encontra um objeto pendurado...
+    alert(`Ao analisar o interior da caverna, você nota 
+        que o piso está repleto de ossos de animais, 
+        deixando o cheiro pútrido ainda mais evidente, 
+        você começa a observar as paredes da caverna e 
+        encontra um objeto pendurado...
         
         Clique em "Ok" para continuar`)
 
@@ -171,7 +190,10 @@ else if (escolha2 === "B") {
                         
             if (escolha2_1 === "A") {
              alert(`
-Ao sair fora, você tropeça em um monte de ossos. O estrondo ecoa pelo ambiente e o barulho rompe o silêncio, alertando aqueles que vivem nas profundezas da caverna...
+Ao sair fora, você tropeça em um monte de ossos. 
+O estrondo ecoa pelo ambiente e o barulho rompe 
+o silêncio, alertando aqueles que vivem nas 
+profundezas da caverna...
 
 Clique no botão "Ok" para continuar!`)   
             }
@@ -179,7 +201,12 @@ Clique no botão "Ok" para continuar!`)
             else if (escolha2_1 === "B") {
 
                 alert(`
-O objeto parece ser uma lanterna antiga, coberta de poeira e teias de aranha. Ao se aproximar para examiná-la, você percebe que ainda há vestígios de óleo dentro dela, e ao tocar nela você a derruba abruptamente com um estrondo alto, ecoando pelo ambiente. O barulho rompe o silêncio, deixando a equipe tensa e alerta, tentando prestar atenção ao que os espera adiante +PODER
+O objeto parece ser uma lanterna antiga, coberta de poeira 
+e teias de aranha. Ao se aproximar para examiná-la, você percebe 
+que ainda há vestígios de óleo dentro dela, e ao tocar nela você 
+a derruba abruptamente com um estrondo alto, ecoando pelo ambiente. 
+O barulho rompe o silêncio, deixando a equipe tensa e alerta, tentando 
+prestar atenção ao que os espera adiante +PODER
 
 Você ganhou 500 HP de vida, parabéns!
 
