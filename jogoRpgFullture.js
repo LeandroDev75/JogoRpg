@@ -41,10 +41,11 @@ let pontosVida;
 let pontosAtaque;
 
 //Variavéis de ataque
-let ataque1;
-let ataque2;
-let ataque3;
+let ataque1 = 20 //Dano * 1
+let ataque2 = 30 //Dano * 1.5
+let ataque3 = 40 //Dano * 2 
 let atacar;
+
 
 
 //Distribuição dos pontos
@@ -452,9 +453,11 @@ if (atacar === "1") {
         
         `))
 
+        inimigo.dano -=
+
         alert(`
 "Você desferiu um ataque simples com sucesso! 
-O ${inimigo.nome} "O inimigo sofreu <DANO * 1> de dano. Ainda restam <vida do inimigo> pontos de vida..."`)
+O ${inimigo.nome} "O inimigo sofreu ${atacando * 1} de dano. Ainda restam <vida do inimigo> pontos de vida..."`)
 }
 
 
