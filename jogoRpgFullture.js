@@ -21,18 +21,31 @@ let player = {
     nome: nome,
     hp: 0,
     dano: 0
-}
+};
 
 let inimigo = {
     nome:"Darkglow",
     hp: 0,
     dano: 0
-}
+};
+
+let esqueletos = {
+    nome: "Esqueletóides",
+    vida: 1500,
+    poder: 500
+};
 
 //variaveis para armazenar pontos
 let pontosTotais = 20;
 let pontosVida;
 let pontosAtaque;
+
+//Variavéis de ataque
+let ataque1;
+let ataque2;
+let ataque3;
+let atacar;
+
 
 //Distribuição dos pontos
 do {
@@ -265,8 +278,10 @@ if (escolha3 === "A") {
     player.hp += 200;
     player.dano += 30;
      
-alert(`Lutar contra <exercito de esqueletos>: Status dos esqueletos:   
-    recompensa: colar de ossos: +30de dano Poção de +200 HP
+alert(`Lutar contra ${esqueletos.nome}: 
+    Status dos esqueletos: ${esqueletos.vida} HP de vida e ${esqueletos.poder} Dano de ataque.  
+    
+    Você recebeu uma recompensa: Colar de Ossos
     
     Você ganhou 200 de HP de vida e 30 de Dano de ataque.
 
@@ -404,6 +419,42 @@ Por quantos séculos mais ${inimigo.nome}
 reinará nas sobras de nosso vale? 
 Tudo fica escuro e quieto...`)
 
+}
+
+//----------- Atacar -------------
+
+do {
+atacar = prompt(`
+"Seu turno, escolha um ataque: ataque 1, 2 ou 3"
+
+Digite uma opção abaixo:
+
+1 - Ataque 1
+2 - Ataque 2
+3 - Ataque 3
+
+`)
+
+if (atacar !== "1" && atacar !== "2" && atacar !== "3") {
+
+    alert(`Opção inválida! Escolha o número 1, 2, ou 3`)
+
+}
+
+}  while (atacar !== 1 && atacar !== 2 && atacar !== 3);
+    
+if (atacar === "1") {
+    alert((`Você escolheu o Ataque 1!
+
+        Você tem ${player.hp} de HP de vida e ${player.dano} de Dano de ataque
+        
+        Clique em "Ok" para continuar!
+        
+        `))
+
+        alert(`
+"Você desferiu um ataque simples com sucesso! 
+O ${inimigo.nome} "O inimigo sofreu <DANO * 1> de dano. Ainda restam <vida do inimigo> pontos de vida..."`)
 }
 
 
