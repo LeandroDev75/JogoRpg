@@ -41,9 +41,10 @@ let pontosVida;
 let pontosAtaque;
 
 //Variavéis de ataque
-let ataque1 = 20 //Dano * 1
-let ataque2 = 30 //Dano * 1.5
-let ataque3 = 40 //Dano * 2 
+let ataque = 100;
+let ataque1 = ataque * 1 //Dano * 1
+let ataque2 = ataque * 1.5;
+let ataque3 = ataque * 2; 
 let atacar;
 
 
@@ -453,11 +454,27 @@ if (atacar === "1") {
         
         `))
 
-        inimigo.dano -=
+        inimigo.vida -= ataque1;
 
         alert(`
 "Você desferiu um ataque simples com sucesso! 
-O ${inimigo.nome} "O inimigo sofreu ${atacando * 1} de dano. Ainda restam <vida do inimigo> pontos de vida..."`)
+O ${inimigo.nome} "O inimigo sofreu ${ataque1} de dano. Ainda restam ${inimigo.vida} pontos de vida..."
+
+Clique em "Ok" para continuar!
+
+`)
+
+} else if (atacar === "2") {
+
+    inimigo -= ata
+
+    alert(`Você escolheu o Ataque 1!
+
+        Você tem ${player.hp} de HP de vida e ${player.dano} de Dano de ataque
+        
+        Clique em "Ok" para continuar!`)
+
+
 }
 
 
