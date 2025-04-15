@@ -332,16 +332,16 @@ do {
             
             `);
     
-            inimigo.hp -= ataque1; //Diminui a quantidade de hp do inimigo
+            esqueletos.vida -= ataque1; //Diminui a quantidade de hp do inimigo
             player.dano -= ataque1; //Diminui a quantidade de dano do player
     
             alert(`
     "Você desferiu um ataque Simples com sucesso!" 
-    O seu inimigo ${inimigo.nome} sofreu ${ataque1} de Dano de vida! Ainda restam ${inimigo.hp} pontos de Vida do inimigo...
+    O seu inimigo ${esqueletos.nome} sofreu ${ataque1} de Dano de vida! Ainda restam ${esqueletos.vida} pontos de Vida do inimigo...
     
     Você tem ${player.hp} de vida e ${player.dano} de Dano de Ataque.
     
-    Seu inimigo tem ${inimigo.hp} de Vida e ${inimigo.dano} de Dano de Ataque.
+    Seu inimigo tem ${esqueletos.vida} de Vida e ${esqueletos.poder} de Dano de Ataque.
     
     Clique em "Ok" para continuar!
     
@@ -368,21 +368,21 @@ do {
     
        if(atacar2 > 2) {
     
-        inimigo.hp -= ataque2;
+        esqueletos.vida -= ataque2;
         player.dano -= ataque2;
     
-        alert(`Você desferiu um Ataque Combo com sucesso! O inimigo ${inimigo.nome} sofreu ${ataque2} de Dano de Ataque!
+        alert(`Você desferiu um Ataque Combo com sucesso! O inimigo ${esqueletos.nome} sofreu ${ataque2} de Dano de Ataque!
     
     
             Você tem ${player.hp} de HP de vida e ${player.dano} de Dano de ataque.
-            Seu inimigo ${inimigo.nome} tem ${inimigo.hp} HP de vida e ${inimigo.dano} de Dano de Ataque.
+            Seu inimigo ${esqueletos.nome} tem ${esqueletos.vida} HP de vida e ${esqueletos.poder} de Dano de Ataque.
     
             
             Clique em "Ok" para continuar!`)
     
         } else {
     
-           alert(`"Você desferiu um "Ataque Combo" mas errou. O ${inimigo.nome} não sofreu dano! Ainda restam ${inimigo.hp} pontos de vida..."`)
+           alert(`"Você desferiu um "Ataque Combo" mas errou. O ${esqueletos.nome} não sofreu dano! Ainda restam ${esqueletos.vida} pontos de vida..."`)
         }
     
     }
@@ -410,14 +410,14 @@ do {
     
             if(atacar3 > 3) {
     
-                inimigo.hp -= ataque3;
+                esqueletos.vida -= ataque3;
                 player.dano -= ataque3;
     
-                alert(`Você desferiu um Ataque Especial com sucesso! O inimigo ${inimigo.nome} sofreu ${ataque3} de Dano de Ataque!
+                alert(`Você desferiu um Ataque Especial com sucesso! O inimigo ${esqueletos.nome} sofreu ${ataque3} de Dano de Ataque!
     
     
                     Você tem ${player.hp} de HP de vida e ${player.dano} de Dano de ataque.
-                    Seu inimigo ${inimigo.nome} tem ${inimigo.hp} HP de vida e ${inimigo.dano} de Dano de Ataque.
+                    Seu inimigo ${esqueletos.nome} tem ${esqueletos.vida} HP de vida e ${esqueletos.poder} de Dano de Ataque.
             
                     
                     Clique em "Ok" para continuar!`)
@@ -425,35 +425,35 @@ do {
         } else {
     
         alert(`
-    "Você desferiu um "Ataque Especial" mas errou. O ${inimigo.nome} não sofreu dano! Ainda restam ${inimigo.hp} pontos de vida..."`)
+    "Você desferiu um "Ataque Especial" mas errou. O ${esqueletos.nome} não sofreu dano! Ainda restam ${esqueletos.vida} pontos de vida..."`)
             
         }
     
     }
 
-    alert(`Turno do inimigo ${inimigo.nome}...
+    alert(`Turno do inimigo ${esqueletos.nome}...
     
-        O inimigo ${inimigo.nome} vai jogar o dado para desferir um ataque!
+        O inimigo ${esqueletos.nome} vai jogar o dado para desferir um ataque!
         
         `)
     
     
-    let ataqueinimigo = Math.floor( Math.random() * 6) + 1;
+    let dadoAtaqueinimigo = Math.floor( Math.random() * 6) + 1;
     
     if (ataqueinimigo <= 5) {
     
-        player.hp -= inimigo.ataque.dano
+        player.hp -= esqueletos.ataque.dano;
     
-        alert(`O dado caiu no número ${ataqueinimigo}
+        alert(`O dado caiu no número ${dadoAtaqueinimigo}
             
             
-            ${inimigo.nome} usa o ataque ${inimigo.ataque.nome}, você perdeu ${inimigo.ataque.dano} pontos de vida e está com ${player.hp} de HP de vida.`)
+            ${esqueletos.nome} usa o ataque ${esqueletos.ataque.nome}, você perdeu ${esqueletos.ataque.dano} pontos de vida e está com ${player.hp} de HP de vida.`)
     
     
     
     } else {
        
-    alert(`${inimigo.nome} usa o ataque ${inimigo.ataque.nome} mas falhou! Você continua com ${player.hp} de HP de vida.`)    
+    alert(`${esqueletos.nome} usa o ataque ${esqueletos.ataque.nome} mas falhou! Você continua com ${player.hp} de HP de vida.`)    
     
     }
 
