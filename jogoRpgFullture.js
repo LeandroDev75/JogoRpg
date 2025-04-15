@@ -559,6 +559,33 @@ Clique em "Ok" para continuar
 
 }
 
+alert(`Turno do inimigo ${inimigo.nome}...
+    
+    O inimigo ${inimigo.nome} vai jogar o dado para desferir um ataque!
+    
+    `)
+
+
+let ataqueinimigo = Math.floor( Math.random() * 6) + 1;
+
+if (ataqueinimigo <= 5) {
+
+    player.hp -= inimigo.ataque.dano
+
+    alert(`O dado caiu no número ${ataqueinimigo}
+        
+        
+        ${inimigo.nome} usa o ataque ${inimigo.ataque.nome}, você perdeu ${inimigo.ataque.dano} pontos de vida e está com ${player.hp} de HP de vida.`)
+
+
+
+} else {
+   
+alert(`${inimigo.nome} usa o ataque ${inimigo.ataque.nome} mas falhou! Você continua com ${player.hp} de HP de vida.`)    
+
+}
+
+
 
 
 
