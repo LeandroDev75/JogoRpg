@@ -43,8 +43,8 @@ let pontosAtaque;
 //Variavéis de ataque
 let ataque = 100;
 let ataque1 = ataque * 1 //Dano * 1
-let ataque2 = ataque * 1.5;
-let ataque3 = ataque * 2; 
+let ataque2 = ataque * 1.5; //Dano * 1.5
+let ataque3 = ataque * 2;  //Dano * 2
 let atacar;
 
 
@@ -476,15 +476,15 @@ Clique em "Ok" para continuar!
 
    let atacar2 = Math.floor(Math.random() * 6) + 1;
 
-   alert(`Você precisa jogar um dado para confirmar seu "Ataque"!
-    Se o dao cair no número 1 ou 2, você erra o "Ataque" e
-    se for maior que 2, você acerta o "Ataque.
+   alert(`Você precisa jogar um dado para confirmar seu "Ataque Combo"!
+    Se o dado cair no número 1 ou 2, você erra o "Ataque combo", e
+    se for maior que 2, você acerta o "Ataque Combo".
 
     Clique em "Ok" para jogar o dado!
     
     `)
 
-    alert(`O dado caiu no número ${atacar2}!
+    alert(`O dado caiu no número ${atacar2}
         
 Clique em "Ok" para continuar
 
@@ -492,13 +492,15 @@ Clique em "Ok" para continuar
 
    if(atacar2 > 2) {
 
-    inimigo.vida -= ataque2;
+    inimigo.hp -= ataque2;
     player.dano -= ataque2;
 
-    alert(`Você escolheu o Ataque 2 e acertou o seu inimigo ${inimigo.nome} causando ${ataque2} de Dano no ${inimigo.nome}!
+    alert(`Você desferiu um Ataque Combo com sucesso! O inimigo ${inimigo.nome} sofreu ${ataque2} de Dano de Ataque!
 
 
-        Você tem ${player.hp} de HP de vida e ${player.dano} de Dano de ataque
+        Você tem ${player.hp} de HP de vida e ${player.dano} de Dano de ataque.
+        Seu inimigo ${inimigo.nome} tem ${inimigo.hp} HP de vida e ${inimigo.dano} de Dano de Ataque.
+
         
         Clique em "Ok" para continuar!`)
 
@@ -509,30 +511,49 @@ Clique em "Ok" para continuar
 
 }
 
-
+//--------------------------
 
      else if (atacar === "3") {
 
-        let atacar3 = Math.random() * 6 > 3;
+        let atacar3 = Math.floor(Math.random() * 6) + 1;
+
+        alert(`Você precisa jogar um dado para confirmar seu "Ataque Especial"!
+            Se o dado cair no número 1 ou 3, você erra o "Ataque Especial", e
+            se for maior que 3, você acerta o "Ataque Especial".
+        
+            Clique em "Ok" para jogar o dado!
+            
+            `)
+        
+            alert(`O dado caiu no número ${atacar3}
+                
+        Clique em "Ok" para continuar
+        
+                `)
 
 
-        if(atacar3 > 3) 
+        if(atacar3 > 3) {
 
-            inimigo.vida -= ataque3 * 2;
+            inimigo.hp -= ataque3;
             player.dano -= ataque3;
 
-alert(`
-"Você desferiu um ataque especial com sucesso! 
-O ${inimigo.nome} sofreu ${ataque2 * 2} de dano. Ainda restam ${inimigo.vida} pontos de vida..."
+            alert(`Você desferiu um Ataque Especial com sucesso! O inimigo ${inimigo.nome} sofreu ${ataque3} de Dano de Ataque!
 
-    `)
+
+                Você tem ${player.hp} de HP de vida e ${player.dano} de Dano de ataque.
+                Seu inimigo ${inimigo.nome} tem ${inimigo.hp} HP de vida e ${inimigo.dano} de Dano de Ataque.
+        
+                
+                Clique em "Ok" para continuar!`)
 
     } else {
 
-     (`
-"Você desferiu um "Ataque Especial" mas errou. O ${inimigo.nome} não sofreu dano! Ainda restam ${inimigo.vida} pontos de vida..."`)
+    alert(`
+"Você desferiu um "Ataque Especial" mas errou. O ${inimigo.nome} não sofreu dano! Ainda restam ${inimigo.hp} pontos de vida..."`)
         
     }
+
+}
 
 
 
