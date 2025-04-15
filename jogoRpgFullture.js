@@ -26,7 +26,11 @@ let player = {
 let inimigo = {
     nome:"Darkglow",
     hp: 0,
-    dano: 0
+    dano: 0,
+    ataque: 
+    {nome: "Ataque Dark",
+        dano: 200
+    }
 };
 
 let esqueletos = {
@@ -506,7 +510,7 @@ Clique em "Ok" para continuar
 
     } else {
 
-       alert(`"Você desferiu um "Ataque Combo" mas errou. O ${inimigo.nome} não sofreu dano! Ainda restam ${inimigo.vida} pontos de vida..."`)
+       alert(`"Você desferiu um "Ataque Combo" mas errou. O ${inimigo.nome} não sofreu dano! Ainda restam ${inimigo.hp} pontos de vida..."`)
     }
 
 }
@@ -554,6 +558,7 @@ Clique em "Ok" para continuar
     }
 
 }
+
 
 
 
