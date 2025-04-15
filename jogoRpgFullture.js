@@ -26,7 +26,7 @@ let player = {
 let inimigo = {
     nome:"Darkglow",
     hp: 0,
-    dano: 0,
+    dano: 500,
     ataque: 
     {nome: "Ataque Dark",
         dano: 200
@@ -36,7 +36,11 @@ let inimigo = {
 let esqueletos = {
     nome: "Esqueletóides",
     vida: 1500,
-    poder: 500
+    poder: 500,
+    ataque: {
+nome: "Ataque Esquelético",
+dano: 200
+    }
 };
 
 //variaveis para armazenar pontos
@@ -296,6 +300,175 @@ alert(`Lutar contra ${esqueletos.nome}:
 
 //---------------
 
+do {
+    atacar = prompt(`
+    "Seu turno, escolha um ataque: ataque 1, 2 ou 3"
+    
+    Digite uma opção abaixo:
+    
+    1 - Ataque Simples
+    2 - Ataque Combo
+    3 - Ataque Especial
+    
+    `)
+    
+    if (atacar !== "1" && atacar !== "2" && atacar !== "3") {
+    
+        alert(`Opção inválida! Escolha o número 1, 2, ou 3`)
+    
+    }
+    
+    }  while (atacar !== "1" && atacar !== "2" && atacar !== "3");
+
+
+    if (atacar === "1") {
+        alert(`Você escolheu o Ataque 1!
+    
+            Você tem ${player.hp} de HP de vida e ${player.dano} de Dano de ataque.
+    
+            Seu inimigo ${esqueletos.nome} tem ${esqueletos.vida} HP de Vida e ${esqueletos.poder} de Dano de Ataque.
+            
+            Clique em "Ok" para continuar!
+            
+            `);
+    
+            inimigo.hp -= ataque1; //Diminui a quantidade de hp do inimigo
+            player.dano -= ataque1; //Diminui a quantidade de dano do player
+    
+            alert(`
+    "Você desferiu um ataque Simples com sucesso!" 
+    O seu inimigo ${inimigo.nome} sofreu ${ataque1} de Dano de vida! Ainda restam ${inimigo.hp} pontos de Vida do inimigo...
+    
+    Você tem ${player.hp} de vida e ${player.dano} de Dano de Ataque.
+    
+    Seu inimigo tem ${inimigo.hp} de Vida e ${inimigo.dano} de Dano de Ataque.
+    
+    Clique em "Ok" para continuar!
+    
+    `)
+    //----------------------------------------------------------------
+    
+    } else if (atacar === "2") {
+    
+       let atacar2 = Math.floor(Math.random() * 6) + 1;
+    
+       alert(`Você precisa jogar um dado para confirmar seu "Ataque Combo"!
+        Se o dado cair no número 1 ou 2, você erra o "Ataque combo", e
+        se for maior que 2, você acerta o "Ataque Combo".
+    
+        Clique em "Ok" para jogar o dado!
+        
+        `)
+    
+        alert(`O dado caiu no número ${atacar2}
+            
+    Clique em "Ok" para continuar
+    
+            `)
+    
+       if(atacar2 > 2) {
+    
+        inimigo.hp -= ataque2;
+        player.dano -= ataque2;
+    
+        alert(`Você desferiu um Ataque Combo com sucesso! O inimigo ${inimigo.nome} sofreu ${ataque2} de Dano de Ataque!
+    
+    
+            Você tem ${player.hp} de HP de vida e ${player.dano} de Dano de ataque.
+            Seu inimigo ${inimigo.nome} tem ${inimigo.hp} HP de vida e ${inimigo.dano} de Dano de Ataque.
+    
+            
+            Clique em "Ok" para continuar!`)
+    
+        } else {
+    
+           alert(`"Você desferiu um "Ataque Combo" mas errou. O ${inimigo.nome} não sofreu dano! Ainda restam ${inimigo.hp} pontos de vida..."`)
+        }
+    
+    }
+    
+    //--------------------------
+    
+         else if (atacar === "3") {
+    
+            let atacar3 = Math.floor(Math.random() * 6) + 1;
+    
+            alert(`Você precisa jogar um dado para confirmar seu "Ataque Especial"!
+                Se o dado cair no número 1 ou 3, você erra o "Ataque Especial", e
+                se for maior que 3, você acerta o "Ataque Especial".
+            
+                Clique em "Ok" para jogar o dado!
+                
+                `)
+            
+                alert(`O dado caiu no número ${atacar3}
+                    
+            Clique em "Ok" para continuar
+            
+                    `)
+    
+    
+            if(atacar3 > 3) {
+    
+                inimigo.hp -= ataque3;
+                player.dano -= ataque3;
+    
+                alert(`Você desferiu um Ataque Especial com sucesso! O inimigo ${inimigo.nome} sofreu ${ataque3} de Dano de Ataque!
+    
+    
+                    Você tem ${player.hp} de HP de vida e ${player.dano} de Dano de ataque.
+                    Seu inimigo ${inimigo.nome} tem ${inimigo.hp} HP de vida e ${inimigo.dano} de Dano de Ataque.
+            
+                    
+                    Clique em "Ok" para continuar!`)
+    
+        } else {
+    
+        alert(`
+    "Você desferiu um "Ataque Especial" mas errou. O ${inimigo.nome} não sofreu dano! Ainda restam ${inimigo.hp} pontos de vida..."`)
+            
+        }
+    
+    }
+
+    alert(`Turno do inimigo ${inimigo.nome}...
+    
+        O inimigo ${inimigo.nome} vai jogar o dado para desferir um ataque!
+        
+        `)
+    
+    
+    let ataqueinimigo = Math.floor( Math.random() * 6) + 1;
+    
+    if (ataqueinimigo <= 5) {
+    
+        player.hp -= inimigo.ataque.dano
+    
+        alert(`O dado caiu no número ${ataqueinimigo}
+            
+            
+            ${inimigo.nome} usa o ataque ${inimigo.ataque.nome}, você perdeu ${inimigo.ataque.dano} pontos de vida e está com ${player.hp} de HP de vida.`)
+    
+    
+    
+    } else {
+       
+    alert(`${inimigo.nome} usa o ataque ${inimigo.ataque.nome} mas falhou! Você continua com ${player.hp} de HP de vida.`)    
+    
+    }
+
+
+
+
+
+
+
+
+
+
+
+//----------------
+
 let escolha3_1;
 
 do {
@@ -429,7 +602,7 @@ Tudo fica escuro e quieto...`)
 
 //----------- Atacar -------------
 
-do {
+/*do {
 atacar = prompt(`
 "Seu turno, escolha um ataque: ataque 1, 2 ou 3"
 
@@ -447,8 +620,9 @@ if (atacar !== "1" && atacar !== "2" && atacar !== "3") {
 
 }
 
-}  while (atacar !== "1" && atacar !== "2" && atacar !== "3");
-    
+}  while (atacar !== "1" && atacar !== "2" && atacar !== "3");  */
+ 
+/*
 if (atacar === "1") {
     alert(`Você escolheu o Ataque 1!
 
@@ -557,7 +731,9 @@ Clique em "Ok" para continuar
         
     }
 
-}
+}   */
+
+//-------------------------------------------
 
 alert(`Turno do inimigo ${inimigo.nome}...
     
