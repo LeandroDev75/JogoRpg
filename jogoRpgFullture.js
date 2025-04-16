@@ -440,7 +440,7 @@ do {
     
     let dadoAtaqueinimigo = Math.floor( Math.random() * 6) + 1;
     
-    if (ataqueinimigo <= 5) {
+    if (dadoAtaqueinimigo <= 5) {
     
         player.hp -= esqueletos.ataque.dano;
     
@@ -457,18 +457,33 @@ do {
     
     }
 
+    if (player.hp <=0 || esqueletos.vida > 0) { alert(`Não foi dessa vez que você derrotou o antigo Exército de Esqueletos... tudo fica escuro e quieto...
 
+       ${player.nome}, infezlimente não foi dessa vez... tente novamente.`
+    )
 
+    } else if (player.hp > 0 || esqueletos.vida <= 0) {
 
+alert(`Parabéns, você venceu a batalha contra ${esqueletos.nome}, a equipe comemora pelo grande feito.`)
 
+    }
 
+    if(player.hp > 0 || esqueletos.vida < 0) {
 
+    alert(`Finalmente o Exército foi conquistado! 
+        Uma sesação de paz invade cada centímetro da câmara... 
+        Num piscar de olhos você está em uma planície muito 
+        peculiar e ao mesmo tempo familiar também... 
+        você percebe que está diante de três portas...`);
 
+    }
+
+    
 
 
 
 //----------------
-
+/*
 let escolha3_1;
 
 do {
@@ -494,7 +509,7 @@ você percebe que está diante de três portas...`)
 
 alert(`Não foi dessa vez que você derrotou o antigo Exército de Esqueletos... tudo fica escuro e quieto...`)
 
-    }
+    } */
 
 
     } else { alert(`
