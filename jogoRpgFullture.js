@@ -322,7 +322,7 @@ do {
 
 
     if (atacar === "1") {
-        alert(`Você escolheu o Ataque 1!
+        alert(`Você escolheu o Ataque Simples!
     
             Você tem ${player.hp} de HP de vida e ${player.dano} de Dano de ataque.
     
