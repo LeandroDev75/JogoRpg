@@ -289,7 +289,7 @@ if (escolha3 === "A") {
     player.dano += 30;
      
 alert(`Lutar contra ${inimigo.nome}: 
-    Status dos esqueletos: ${inimigo.hp} HP de vida e ${esqueletos.poder} Dano de ataque.  
+    Status dos esqueletos: ${inimigo.hp} HP de vida e ${inimigo.dano} Dano de ataque.  
     
     Você recebeu uma recompensa: Colar de Ossos
     
@@ -326,7 +326,7 @@ do {
     
             Você tem ${player.hp} de HP de vida e ${player.dano} de Dano de ataque.
     
-            Seu inimigo ${inimigo.nome} tem ${inimigo.hp} HP de Vida e ${esqueletos.poder} de Dano de Ataque.
+            Seu inimigo ${inimigo.nome} tem ${inimigo.hp} HP de Vida e ${inimigo.dano} de Dano de Ataque.
             
             Clique em "Ok" para continuar!
             
@@ -341,7 +341,7 @@ do {
     
     Você tem ${player.hp} de vida e ${player.dano} de Dano de Ataque.
     
-    Seu inimigo tem ${inimigo.hp} de Vida e ${esqueletos.poder} de Dano de Ataque.
+    Seu inimigo tem ${inimigo.hp} de Vida e ${inimigo.dano} de Dano de Ataque.
     
     Clique em "Ok" para continuar!
     
@@ -375,7 +375,7 @@ do {
     
     
             Você tem ${player.hp} de HP de vida e ${player.dano} de Dano de ataque.
-            Seu inimigo ${inimigo.nome} tem ${inimigo.hp} HP de vida e ${esqueletos.poder} de Dano de Ataque.
+            Seu inimigo ${inimigo.nome} tem ${inimigo.hp} HP de vida e ${inimigo.dano} de Dano de Ataque.
     
             
             Clique em "Ok" para continuar!`)
@@ -417,7 +417,7 @@ do {
     
     
                     Você tem ${player.hp} de HP de vida e ${player.dano} de Dano de ataque.
-                    Seu inimigo ${inimigo.nome} tem ${inimigo.hp} HP de vida e ${esqueletos.poder} de Dano de Ataque.
+                    Seu inimigo ${inimigo.nome} tem ${inimigo.hp} HP de vida e ${inimigo.dano} de Dano de Ataque.
             
                     
                     Clique em "Ok" para continuar!`)
