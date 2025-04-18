@@ -442,12 +442,12 @@ do {
     
     if (dadoAtaqueinimigo <= 5) {
     
-        player.hp -= esqueletos.ataque.dano;
+        player.hp -= inimigo.dano;
     
         alert(`O dado caiu no número ${dadoAtaqueinimigo}
             
             
-            ${inimigo.nome} usa o ataque ${esqueletos.ataque.nome}, você perdeu ${esqueletos.ataque.dano} pontos de vida e está com ${player.hp} de HP de vida.`)
+            ${inimigo.nome} usa o ataque ${esqueletos.ataque.nome}, você perdeu ${inimigo.dano} pontos de vida e está com ${player.hp} de HP de vida.`)
     
     
     
