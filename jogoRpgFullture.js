@@ -438,22 +438,23 @@ do {
         `)
     
     
-    let dadoAtaqueinimigo = Math.floor( Math.random() * 6) + 1;
+    let dadoAtaqueinimigo = Math.floor(Math.random() * 10) + 1; //Gera número de 1 a 10
     
-    if (dadoAtaqueinimigo <= 5) {
+    // 7 equivale a 70% de chance
+    if (dadoAtaqueinimigo <= 7) {
     
         player.hp -= inimigo.dano;
     
         alert(`O dado caiu no número ${dadoAtaqueinimigo}
             
             
-            ${inimigo.nome} usa o ataque ${esqueletos.ataque.nome}, você perdeu ${inimigo.dano} pontos de vida e está com ${player.hp} de HP de vida.`)
+            ${inimigo.nome} usa o ataque ${inimigo.ataque.nome}, você perdeu ${inimigo.dano} pontos de vida e está com ${player.hp} de HP de vida.`)
     
     
     
     } else {
        
-    alert(`${inimigo.nome} usa o ataque ${esqueletos.ataque.nome} mas falhou! Você continua com ${player.hp} de HP de vida.`)    
+    alert(`${inimigo.nome} usa o ataque ${inimigo.ataque.nome} mas falhou! Você continua com ${player.hp} de HP de vida.`)    
     
     }
 
