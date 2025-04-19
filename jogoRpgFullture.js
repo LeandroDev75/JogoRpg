@@ -29,19 +29,19 @@ let inimigo = {
     dano: 500,
     ataque: 
     {nome: "Ataque Dark",
-        dano: 50
+        dano: 10
     }
 };
 
-/*let esqueletos = {
+let esqueletos = {
     nome: "Esqueletóides",
     vida: 1500,
     poder: 500,
     ataque: {
 nome: "Ataque Esquelético",
-dano: 200
+dano: 10
     }
-};*/
+};
 
 //variaveis para armazenar pontos
 let pontosTotais = 20;
@@ -529,6 +529,25 @@ alert(`Fim do Jogo!
     `)
     
     }
+
+
+//----------------------------------------
+
+if (player.hp > 0 && inimigo.hp < 0) {
+     
+    alert(`Finalmente o Exército foi conquistado! 
+    Uma sesação de paz invade cada centímetro da câmara... 
+    Num piscar de olhos você está em uma planície muito 
+    peculiar e ao mesmo tempo familiar também... 
+    você percebe que está diante de três portas...`)  
+    
+        } else {
+    
+    alert(`Não foi dessa vez que você derrotou o antigo Exército de Esqueletos... tudo fica escuro e quieto...`)
+    
+        }
+
+
     
 //----------------------------------------------
 
