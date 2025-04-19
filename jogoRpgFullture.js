@@ -25,11 +25,11 @@ let player = {
 
 let inimigo = {
     nome:"Darkglow",
-    hp: 0,
+    hp: 1500,
     dano: 500,
     ataque: 
     {nome: "Ataque Dark",
-        dano: 200
+        dano: 50
     }
 };
 
@@ -49,7 +49,7 @@ let pontosVida;
 let pontosAtaque;
 
 //Variavéis de ataque
-let ataque = 100;
+let ataque = 50;
 let ataque1 = ataque * 1 //Dano * 1
 let ataque2 = ataque * 1.5; //Dano * 1.5
 let ataque3 = ataque * 2;  //Dano * 2
@@ -298,7 +298,9 @@ alert(`Lutar contra ${inimigo.nome}:
     Você tem ${player.hp} de HP de vida e ${player.dano} de Dano de ataque. 
     `);  
 
-//---------------
+//--------------- Batalha-------
+
+do {
 
 do {
     atacar = prompt(`
@@ -332,8 +334,8 @@ do {
             
             `);
     
-            inimigo.hp -= ataque1; //Diminui a quantidade de hp do inimigo
-            player.dano -= ataque1; //Diminui a quantidade de dano do player
+            inimigo.hp -= ataque; //Diminui a quantidade de hp do inimigo
+            player.dano -= ataque; //Diminui a quantidade de dano do player
     
             alert(`
     "Você desferiu um ataque Simples com sucesso!" 
@@ -368,8 +370,8 @@ do {
     
        if(atacar2 > 2) {
     
-        inimigo.hp -= ataque2;
-        player.dano -= ataque2;
+        inimigo.hp -= ataque;
+        player.dano -= ataque;
     
         alert(`Você desferiu um Ataque Combo com sucesso! O inimigo ${inimigo.nome} sofreu ${ataque2} de Dano de Ataque!
     
@@ -410,8 +412,8 @@ do {
     
             if(atacar3 > 3) {
     
-                inimigo.hp -= ataque3;
-                player.dano -= ataque3;
+                inimigo.hp -= ataque;
+                player.dano -= ataque;
     
                 alert(`Você desferiu um Ataque Especial com sucesso! O inimigo ${inimigo.nome} sofreu ${ataque3} de Dano de Ataque!
     
@@ -433,7 +435,7 @@ do {
 
     alert(`Turno do inimigo ${inimigo.nome}...
     
-        O inimigo ${inimigo.nome} vai jogar o dado para desferir um ataque!
+        O inimigo ${inimigo.nome} vai desferir um ataque!
         
         `)
     
@@ -444,11 +446,12 @@ do {
     if (dadoAtaqueinimigo <= 7) {
     
         player.hp -= inimigo.dano;
+        inimigo.dano -= inimigo.ataque.nome.dano;
     
-        alert(`O dado caiu no número ${dadoAtaqueinimigo}
+        alert(`${inimigo.nome} desferiu um ataque!
             
             
-            ${inimigo.nome} usa o ataque ${inimigo.ataque.nome}, você perdeu ${inimigo.dano} pontos de vida e está com ${player.hp} de HP de vida.`)
+            ${inimigo.nome} usa o ataque ${inimigo.ataque.nome}, você perdeu ${inimigo.ataque.nome.dano} pontos de vida e está com ${player.hp} de HP de vida.`)
     
     
     
@@ -458,7 +461,10 @@ do {
     
     }
 
-    if (player.hp <=0 || inimigo.hp > 0) { alert(`Não foi dessa vez que você derrotou o antigo Exército de Esqueletos... tudo fica escuro e quieto...
+    //---------------------------- Loop ---------------------------
+} while (player.hp > 0 && inimigo.hp > 0);
+
+   /* if (player.hp <=0 || inimigo.hp > 0) { alert(`Não foi dessa vez que você derrotou o antigo Exército de Esqueletos... tudo fica escuro e quieto...
 
        ${player.nome}, infezlimente não foi dessa vez... tente novamente.`
     )
@@ -472,12 +478,12 @@ alert(`Parabéns, você venceu a batalha contra ${inimigo.nome}, a equipe comemo
     if(player.hp > 0 || inimigo.hp < 0) {
 
     alert(`Finalmente o Exército foi conquistado! 
-        Uma sesação de paz invade cada centímetro da câmara... 
+        Uma sessação de paz invade cada centímetro da câmara... 
         Num piscar de olhos você está em uma planície muito 
         peculiar e ao mesmo tempo familiar também... 
         você percebe que está diante de três portas...`);
 
-    }
+    } */
 
     
 
@@ -517,6 +523,11 @@ alert(`Não foi dessa vez que você derrotou o antigo Exército de Esqueletos...
 Ao Sair correndo você bate com a cabeça num 
 pilar de pedra e perde a consciência...`);
 
+alert(`Fim do Jogo!
+
+    Tente outra vez!    
+    `)
+    
     }
     
 //----------------------------------------------
