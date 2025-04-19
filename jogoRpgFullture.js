@@ -73,7 +73,7 @@ player.dano = pontosVida * 10;
 alert(`${player.nome}, você começa sua jornada com ${player.hp} HP de vida e ${player.dano} Dano.`)
 
 
-    alert(`Mensagem: Então ${nome}, já se passaram alguns dias desde que você
+    alert(`Mensagem: Então ${player.nome}, já se passaram alguns dias desde que você
     se juntou à Exploração de Dungeon, e você estava se preparando
     para sua primeira incursão em uma masmorra! Após alguns dias 
     de viagem, você chega à entrada da misteriosa masmorra. 
@@ -288,8 +288,8 @@ if (escolha3 === "A") {
     player.hp += 200;
     player.dano += 30;
      
-alert(`Lutar contra ${inimigo.nome}: 
-    Status dos esqueletos: ${inimigo.hp} HP de vida e ${inimigo.dano} Dano de ataque.  
+alert(`Lutar contra ${esqueletos.nome}: 
+    Status dos esqueletos: ${esqueletos.vida} HP de vida e ${esqueletos.poder} Dano de ataque.  
     
     Você recebeu uma recompensa: Colar de Ossos
     
@@ -328,7 +328,7 @@ do {
     
             Você tem ${player.hp} de HP de vida e ${player.dano} de Dano de ataque.
     
-            Seu inimigo ${inimigo.nome} tem ${inimigo.hp} HP de Vida e ${inimigo.dano} de Dano de Ataque.
+            Seu inimigo ${esqueletos.nome} tem ${esqueletos.vida} HP de Vida e ${esqueletos.poder} de Dano de Ataque.
             
             Clique em "Ok" para continuar!
             
@@ -339,11 +339,11 @@ do {
     
             alert(`
     "Você desferiu um ataque Simples com sucesso!" 
-    O seu inimigo ${inimigo.nome} sofreu ${ataque1} de Dano de vida! Ainda restam ${inimigo.hp} pontos de Vida do inimigo...
+    O seu inimigo ${esqueletos.nome} sofreu ${ataque1} de Dano de ataque! Ainda restam ${esqueletos.vida} pontos de Vida do inimigo...
     
     Você tem ${player.hp} de vida e ${player.dano} de Dano de Ataque.
     
-    Seu inimigo tem ${inimigo.hp} de Vida e ${inimigo.dano} de Dano de Ataque.
+    Seu inimigo tem ${esqueletos.vida} de Vida e ${esqueletos.poder} de Dano de Ataque.
     
     Clique em "Ok" para continuar!
     
@@ -370,21 +370,21 @@ do {
     
        if(atacar2 > 2) {
     
-        inimigo.hp -= ataque;
-        player.dano -= ataque;
+        inimigo.hp -= ataque2;
+        player.dano -= ataque2;
     
-        alert(`Você desferiu um Ataque Combo com sucesso! O inimigo ${inimigo.nome} sofreu ${ataque2} de Dano de Ataque!
+        alert(`Você desferiu um Ataque Combo com sucesso! O inimigo ${esqueletos.nome} sofreu ${ataque2} de Dano de Ataque!
     
     
             Você tem ${player.hp} de HP de vida e ${player.dano} de Dano de ataque.
-            Seu inimigo ${inimigo.nome} tem ${inimigo.hp} HP de vida e ${inimigo.dano} de Dano de Ataque.
+            Seu inimigo ${esqueletos.nome} tem ${esqueletos.vida} HP de vida e ${esqueletos.poder} de Dano de Ataque.
     
             
             Clique em "Ok" para continuar!`)
     
         } else {
     
-           alert(`"Você desferiu um "Ataque Combo" mas errou. O ${inimigo.nome} não sofreu dano! Ainda restam ${inimigo.hp} pontos de vida..."`)
+           alert(`"Você desferiu um "Ataque Combo" mas errou. O ${esqueletos.nome} não sofreu dano! Ainda restam ${esqueletos.vida} pontos de vida..."`)
         }
     
     }
@@ -412,14 +412,14 @@ do {
     
             if(atacar3 > 3) {
     
-                inimigo.hp -= ataque;
-                player.dano -= ataque;
+                inimigo.hp -= ataque3;
+                player.dano -= ataque3;
     
-                alert(`Você desferiu um Ataque Especial com sucesso! O inimigo ${inimigo.nome} sofreu ${ataque3} de Dano de Ataque!
+                alert(`Você desferiu um Ataque Especial com sucesso! O inimigo ${esqueletos.nome} sofreu ${ataque3} de Dano de Ataque!
     
     
                     Você tem ${player.hp} de HP de vida e ${player.dano} de Dano de ataque.
-                    Seu inimigo ${inimigo.nome} tem ${inimigo.hp} HP de vida e ${inimigo.dano} de Dano de Ataque.
+                    Seu inimigo ${esqueletos.nome} tem ${esqueletos.vida} HP de vida e ${esqueletos.poder} de Dano de Ataque.
             
                     
                     Clique em "Ok" para continuar!`)
@@ -427,15 +427,15 @@ do {
         } else {
     
         alert(`
-    "Você desferiu um "Ataque Especial" mas errou. O ${inimigo.nome} não sofreu dano! Ainda restam ${inimigo.hp} pontos de vida..."`)
+    "Você desferiu um "Ataque Especial" mas errou. O ${esqueletos.nome} não sofreu dano! Ainda restam ${esqueletos.vida} pontos de vida..."`)
             
         }
     
     }
 
-    alert(`Turno do inimigo ${inimigo.nome}...
+    alert(`Turno do inimigo ${esqueletos.nome}...
     
-        O inimigo ${inimigo.nome} vai desferir um ataque!
+        O inimigo ${esqueletos.nome} vai desferir um ataque!
         
         `)
     
@@ -445,24 +445,24 @@ do {
     // 7 equivale a 70% de chance
     if (dadoAtaqueinimigo <= 7) {
     
-        player.hp -= inimigo.dano;
-        inimigo.dano -= inimigo.ataque.nome.dano;
+        player.hp -= esqueletos.poder;
+        esqueletos.poder -= esqueletos.ataque.dano;
     
-        alert(`${inimigo.nome} desferiu um ataque!
+        alert(`${esqueletos.nome} desferiu um ataque!
             
             
-            ${inimigo.nome} usa o ataque ${inimigo.ataque.nome}, você perdeu ${inimigo.ataque.nome.dano} pontos de vida e está com ${player.hp} de HP de vida.`)
+            ${esqueletos.nome} usa o ataque ${esqueletos.ataque.nome}, você perdeu ${esqueletos.ataque.dano} pontos de vida e está com ${player.hp} de HP de vida.`)
     
     
     
     } else {
        
-    alert(`${inimigo.nome} usa o ataque ${inimigo.ataque.nome} mas falhou! Você continua com ${player.hp} de HP de vida.`)    
+    alert(`${esqueletos.nome} usa o ataque ${esqueletos.ataque.nome} mas falhou! Você continua com ${player.hp} de HP de vida.`)    
     
     }
 
     //---------------------------- Loop ---------------------------
-} while (player.hp > 0 && inimigo.hp > 0);
+} while (player.hp > 0 && esqueletos.vida > 0);
 
    /* if (player.hp <=0 || inimigo.hp > 0) { alert(`Não foi dessa vez que você derrotou o antigo Exército de Esqueletos... tudo fica escuro e quieto...
 
