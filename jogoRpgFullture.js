@@ -29,7 +29,7 @@ let inimigo = {
     dano: 500,
     ataque: 
     {nome: "Ataque Dark",
-        dano: 10
+        dano: 400
     }
 };
 
@@ -39,7 +39,7 @@ let esqueletos = {
     poder: 500,
     ataque: {
 nome: "Ataque Esquelético",
-dano: 10
+dano: 400
     }
 };
 
@@ -49,7 +49,7 @@ let pontosVida;
 let pontosAtaque;
 
 //Variavéis de ataque
-let ataque = 50;
+let ataque = 300;
 let ataque1 = ataque * 1 //Dano * 1
 let ataque2 = ataque * 1.5; //Dano * 1.5
 let ataque3 = ataque * 2;  //Dano * 2
@@ -59,7 +59,7 @@ let atacar;
 
 //Distribuição dos pontos
 do {
-    pontosVida = parseInt(prompt("Você tem 20 pontos para dividir entre Vida e Ataque. Quantos pontos você quer colocar em Vida?"))
+    pontosVida = parseInt(prompt(`Você tem 20 pontos para dividir entre Vida e Ataque. Quantos pontos você quer colocar em Vida? A quantidade escolhida de vida será multiplicado por 100 e a de Ataque multiplicado por 10. `))
     
     if(isNaN(pontosVida) || pontosVida < 1 || pontosVida > 20) {
         alert("Valor inválido! Insira um número entre 1 e 20");
@@ -67,8 +67,9 @@ do {
 } while (isNaN(pontosVida) || pontosVida < 1 || pontosVida >20);
 
 //Calculando os pontos de hp e dano
+pontosAtaque = pontosTotais - pontosVida;
 player.hp = pontosVida * 100;
-player.dano = pontosVida * 10;
+player.dano = pontosAtaque * 10;
 
 alert(`${player.nome}, você começa sua jornada com ${player.hp} HP de vida e ${player.dano} Dano.`)
 
@@ -334,7 +335,7 @@ do {
             
             `);
     
-            inimigo.hp -= ataque; //Diminui a quantidade de hp do inimigo
+            esqueletos.vida -= ataque; //Diminui a quantidade de hp do inimigo
             player.dano -= ataque; //Diminui a quantidade de dano do player
     
             alert(`
@@ -370,7 +371,7 @@ do {
     
        if(atacar2 > 2) {
     
-        inimigo.hp -= ataque2;
+        esqueletos.vida -= ataque2;
         player.dano -= ataque2;
     
         alert(`Você desferiu um Ataque Combo com sucesso! O inimigo ${esqueletos.nome} sofreu ${ataque2} de Dano de Ataque!
@@ -384,7 +385,9 @@ do {
     
         } else {
     
-           alert(`"Você desferiu um "Ataque Combo" mas errou. O ${esqueletos.nome} não sofreu dano! Ainda restam ${esqueletos.vida} pontos de vida..."`)
+         player.dano -= ataque;
+
+           alert(`"Você desferiu um "Ataque Combo" mas errou. O ${esqueletos.nome} não sofreu dano! Ainda restam ${esqueletos.vida} pontos de vida..."  Você usou ${ataque} dano de ataque!`)
         }
     
     }
@@ -396,7 +399,7 @@ do {
             let atacar3 = Math.floor(Math.random() * 6) + 1;
     
             alert(`Você precisa jogar um dado para confirmar seu "Ataque Especial"!
-                Se o dado cair no número 1 ou 3, você erra o "Ataque Especial", e
+                Se o dado cair no número 1, 2 ou 3, você erra o "Ataque Especial", e
                 se for maior que 3, você acerta o "Ataque Especial".
             
                 Clique em "Ok" para jogar o dado!
@@ -412,28 +415,35 @@ do {
     
             if(atacar3 > 3) {
     
-                inimigo.hp -= ataque3;
-                player.dano -= ataque3;
+                esqueletos.vida -= ataque3;
+                player.dano -= ataque;
     
                 alert(`Você desferiu um Ataque Especial com sucesso! O inimigo ${esqueletos.nome} sofreu ${ataque3} de Dano de Ataque!
     
     
-                    Você tem ${player.hp} de HP de vida e ${player.dano} de Dano de ataque.
-                    Seu inimigo ${esqueletos.nome} tem ${esqueletos.vida} HP de vida e ${esqueletos.poder} de Dano de Ataque.
+                    Você tem ${player.hp} de vida e ${player.dano} de Dano de ataque.
+                    Seu inimigo ${esqueletos.nome} tem ${esqueletos.vida} de vida e ${esqueletos.poder} de Ataque.
             
                     
                     Clique em "Ok" para continuar!`)
     
         } else {
+
+            player.dano -= ataque
     
         alert(`
-    "Você desferiu um "Ataque Especial" mas errou. O ${esqueletos.nome} não sofreu dano! Ainda restam ${esqueletos.vida} pontos de vida..."`)
+    "Você desferiu um "Ataque Especial" mas errou, usou ${ataque} de Dano de ataque! O ${esqueletos.nome} não sofreu dano! 
+    Ainda restam ${esqueletos.vida} pontos de vida..."
+    
+    ${player.nome} tem: ${player.hp} de vida e ${player.dano} de ataque.
+    
+    `)
             
         }
     
     }
 
-    alert(`Turno do inimigo ${esqueletos.nome}...
+    alert(`Turno de ataque do inimigo ${esqueletos.nome}...
     
         O inimigo ${esqueletos.nome} vai desferir um ataque!
         
@@ -445,7 +455,7 @@ do {
     // 7 equivale a 70% de chance
     if (dadoAtaqueinimigo <= 7) {
     
-        player.hp -= esqueletos.poder;
+        player.hp -= esqueletos.ataque.dano;
         esqueletos.poder -= esqueletos.ataque.dano;
     
         alert(`${esqueletos.nome} desferiu um ataque!
@@ -455,16 +465,18 @@ do {
     
     
     
-    } else {
+    } else if (dadoAtaqueinimigo > 7) {
+
+        esqueletos.poder -= esqueletos.ataque.dano;
        
-    alert(`${esqueletos.nome} usa o ataque ${esqueletos.ataque.nome} mas falhou! Você continua com ${player.hp} de HP de vida.`)    
+    alert(`${esqueletos.nome} usa o ataque ${esqueletos.ataque.nome} mas falhou! Você continua com ${player.hp} de HP de vida. O ${esqueletos.nome} usou ${esqueletos.ataque.dano} e agora está com ${esqueletos.poder} de poder de ataque.` )    
     
     }
 
     //---------------------------- Loop ---------------------------
 } while (player.hp > 0 && esqueletos.vida > 0);
 
-   /* if (player.hp <=0 || inimigo.hp > 0) { alert(`Não foi dessa vez que você derrotou o antigo Exército de Esqueletos... tudo fica escuro e quieto...
+   if (player.hp <=0 || inimigo.hp > 0) { alert(`Não foi dessa vez que você derrotou o antigo Exército de Esqueletos... tudo fica escuro e quieto...
 
        ${player.nome}, infezlimente não foi dessa vez... tente novamente.`
     )
@@ -475,7 +487,7 @@ alert(`Parabéns, você venceu a batalha contra ${inimigo.nome}, a equipe comemo
 
     }
 
-    if(player.hp > 0 || inimigo.hp < 0) {
+  /*  if(player.hp > 0 || inimigo.hp < 0) {
 
     alert(`Finalmente o Exército foi conquistado! 
         Uma sessação de paz invade cada centímetro da câmara... 
@@ -597,9 +609,19 @@ fáceis, não espere nenhum tipo de alívio agora..."
 
 else { alert(`
 
-Você escolhe a Porta da Casa dos seus Pais. ao atravessa-la você se sente quente e cada vez mais pesado, estranhamente isso não o incomoda...
+Você escolhe a Porta da Casa dos seus Pais. 
+Ao atravessa-lá você se sente quente e cada vez 
+mais pesado, estranhamente isso não o incomoda...
 
-`)}
+
+"O jogo acabou para você!"
+
+Tente outra vez!
+`)
+
+location.reload();
+
+}
 
 player.hp += 8000;
 
