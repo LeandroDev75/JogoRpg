@@ -7,14 +7,12 @@ let nome;
 
 do {nome = prompt("Qual o seu nome?");
 
-    if (nome.length === 0){
+    if (nome.length === 0 || nome.trim().length || !nome){
         alert(`Digite seu nome! Clique em "Ok" para continuar!`)
 
     }
 
-} while (nome.length === 0) {
-    
-};
+} while (nome.length === 0 || nome.trim().length || !nome);
 
 //Variavel para armazenar um objeto nome, hp, dano
 let player = {
@@ -443,6 +441,13 @@ do {
     
     }
 
+} while (player.hp > 0 && esqueletos.vida > 0);
+
+
+if (esqueletos.vida > 0) {
+
+do{
+
     alert(`Turno de ataque do inimigo ${esqueletos.nome}...
     
         O inimigo ${esqueletos.nome} vai desferir um ataque!
@@ -473,10 +478,14 @@ do {
     
     }
 
+
+
     //---------------------------- Loop ---------------------------
 } while (player.hp > 0 && esqueletos.vida > 0);
 
-   if (player.hp <=0 || inimigo.hp > 0) { alert(`Não foi dessa vez que você derrotou o antigo Exército de Esqueletos... tudo fica escuro e quieto...
+}
+
+   if (player.hp <=0 || esqueletos.vida > 0) { alert(`Não foi dessa vez que você derrotou o antigo Exército de Esqueletos... tudo fica escuro e quieto...
 
        ${player.nome}, infezlimente não foi dessa vez... tente novamente.`
     )
