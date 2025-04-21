@@ -8,6 +8,8 @@
 <body>
 <script>
 
+    function jogarRpg() {
+
     //função para iniciar o jogo e dar boa vindas
 
 alert("Bem-vindo ao jogo RPG Fullture!"); 
@@ -513,7 +515,7 @@ else if (player.hp <=0 || esqueletos.vida > 0) { alert(`Não foi dessa vez que v
        ${player.nome}, infezlimente não foi dessa vez... tente novamente.`
     )
 
-    history.go(0);
+    jogarRpg();
 
 } 
 
@@ -572,11 +574,12 @@ alert(`Fim do Jogo!
     Tente outra vez!    
     `)
 
-    setTimeout(() => {
-        location.reload();
-      }, 100);
-    
+    jogarRpg();
+        
     }
+
+   
+    
 
 
 //----------------------------------------
@@ -1091,7 +1094,9 @@ alert(`${inimigo.nome} usa o ataque ${inimigo.ataque.nome} mas falhou! Você con
 
 
 
+}; // final da função jogarRpg
 
+jogarRpg();
     
     
     
