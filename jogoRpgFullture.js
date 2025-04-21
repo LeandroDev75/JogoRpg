@@ -141,8 +141,8 @@ else if (escolha1 === 'B') {
         Você tem ${player.hp} de HP e ${player.dano} de Dano!
         `)  
 }
-} 
-else {
+
+}else {
   alert(`Opção inválida! Escolha a letra A ou B`);
 }
 
@@ -503,7 +503,7 @@ else if (player.hp <=0 || esqueletos.vida > 0) { alert(`Não foi dessa vez que v
        ${player.nome}, infezlimente não foi dessa vez... tente novamente.`
     )
 
-    location.reload();
+    history.go(0);
 
 } 
 
@@ -562,7 +562,9 @@ alert(`Fim do Jogo!
     Tente outra vez!    
     `)
 
-    location.reload();
+    setTimeout(() => {
+        location.reload();
+      }, 100);
     
     }
 
@@ -649,7 +651,7 @@ mais pesado, estranhamente isso não o incomoda...
 Tente outra vez!
 `)
 
-location.reload();
+history.go(0);
 
 }
 
