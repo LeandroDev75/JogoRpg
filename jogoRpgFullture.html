@@ -396,7 +396,7 @@ do {
     
         } else {
     
-         player.dano -= ataque;
+         player.dano -= ataque2;
 
            alert(`"Você desferiu um "Ataque Combo" mas errou. O ${esqueletos.nome} não sofreu dano! Ainda restam ${esqueletos.vida} pontos de vida..."  Você usou ${ataque} dano de ataque!`)
         }
@@ -440,7 +440,7 @@ do {
     
         } else {
 
-            player.dano -= ataque
+            player.dano -= ataque3
     
         alert(`
     "Você desferiu um "Ataque Especial" mas errou, usou ${ataque} de Dano de ataque! O ${esqueletos.nome} não sofreu dano! 
@@ -691,7 +691,7 @@ do {
         
             } else {
         
-             player.dano -= ataque;
+             player.dano -= ataque2;
     
                alert(`"Você desferiu um "Ataque Combo" mas errou. O ${inimigo.nome} não sofreu dano! Ainda restam ${inimigo.hp} pontos de vida..."  Você usou ${ataque} dano de ataque!`)
             }
@@ -735,7 +735,7 @@ do {
         
             } else {
     
-                player.dano -= ataque
+                player.dano -= ataque3;
         
             alert(`
         "Você desferiu um "Ataque Especial" mas errou, usou ${ataque} de Dano de ataque! O ${inimigo.nome} não sofreu dano! 
@@ -762,12 +762,12 @@ do {
         if (dadoAtaqueinimigo <= 7) {
         
             player.hp -= esqueletos.ataque.dano;
-            esqueletos.poder -= esqueletos.ataque.dano;
+            inimigo.hp -= inimigo.ataque.dano;
         
             alert(`${inimigo.nome} desferiu um ataque!
                 
                 
-                ${inimigo.nome} usa o ataque ${esqueletos.ataque.nome}, você perdeu ${esqueletos.ataque.dano} pontos de vida e está com ${player.hp} de HP de vida.`)
+                ${inimigo.nome} usa o ataque ${inimigo.ataque.nome}, você perdeu ${inimigo.ataque.dano} pontos de vida e está com ${player.hp} de HP de vida.`)
         
         
         
@@ -775,7 +775,7 @@ do {
     
             esqueletos.poder -= esqueletos.ataque.dano;
            
-        alert(`${inimigo.nome} usa o ataque ${esqueletos.ataque.nome} mas falhou! Você continua com ${player.hp} de HP de vida.` )    
+        alert(`${inimigo.nome} usa o ataque ${inimigo.ataque.nome} mas falhou! Você continua com ${player.hp} de HP de vida.` )    
         
         }
     
