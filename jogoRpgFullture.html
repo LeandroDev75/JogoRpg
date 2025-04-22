@@ -178,7 +178,7 @@ escolha2 = prompt(`O que você quer fazer?
     } while (escolha2 !== "A" && escolha2 !== "B");
 
     let escolhaAleatoria2 = Math.random() < 0.5;
-    alert(escolhaAleatoria2);
+    //alert(escolhaAleatoria2);
 
     if (escolha2 === "A" && escolhaAleatoria2 == true) {
 
@@ -454,12 +454,8 @@ do {
     
     }
 
-} while (player.hp > 0 && esqueletos.vida > 0);
 
 
-if (esqueletos.vida > 0) {
-
-do{
 
     alert(`Turno de ataque do inimigo ${esqueletos.nome}...
     
@@ -491,14 +487,12 @@ do{
     
     }
 
-
-
-    //---------------------------- Loop ---------------------------
 } while (player.hp > 0 && esqueletos.vida > 0);
 
-}
+    //---------------------------- Loop ---------------------------
 
-if (player.hp > 0 || inimigo.hp <= 0) {
+
+if (player.hp > 0 || esqueletos.vida <= 0) {
 
     alert(`Finalmente o Exército foi conquistado! 
         Uma sessação de paz invade cada centímetro da câmara... 
@@ -519,85 +513,18 @@ else if (player.hp <=0 || esqueletos.vida > 0) { alert(`Não foi dessa vez que v
 
 } 
 
-   
-
-  /*  if(player.hp > 0 || inimigo.hp < 0) {
-
-    alert(`Finalmente o Exército foi conquistado! 
-        Uma sessação de paz invade cada centímetro da câmara... 
-        Num piscar de olhos você está em uma planície muito 
-        peculiar e ao mesmo tempo familiar também... 
-        você percebe que está diante de três portas...`);
-
-    } */
-
-    
-
-
-
-//----------------
-/*
-let escolha3_1;
-
-do {
-escolha3_1 = prompt(`Agora escolha o caminha A ou B para proceguir.`).toUpperCase();
-
-   if (escolha3_1 !== "A" && escolha3_1 !== "B") {
-   
-    alert(`Opção inválida! Escolha a letra "A" ou "B".`)
-
-   }
-    
-} while (escolha3_1 !== "A" && escolha3_1 !== "B");
-
-    if (escolha3_1 === "A") {
-     
-alert(`Finalmente o Exército foi conquistado! 
-Uma sesação de paz invade cada centímetro da câmara... 
-Num piscar de olhos você está em uma planície muito 
-peculiar e ao mesmo tempo familiar também... 
-você percebe que está diante de três portas...`)  
-
-    } else {
-
-alert(`Não foi dessa vez que você derrotou o antigo Exército de Esqueletos... tudo fica escuro e quieto...`)
-
-    } */
-
-
     } else { alert(`
 Ao Sair correndo você bate com a cabeça num 
 pilar de pedra e perde a consciência...`);
 
-alert(`Fim do Jogo!
+alert(`Você perdeu o Jogo!
 
     Tente outra vez!    
     `)
 
-    jogarRpg();
+    jogarRpg();    
         
     }
-
-   
-    
-
-
-//----------------------------------------
-
-/*if (player.hp > 0 && inimigo.hp < 0) {
-     
-    alert(`Finalmente o Exército foi conquistado! 
-    Uma sesação de paz invade cada centímetro da câmara... 
-    Num piscar de olhos você está em uma planície muito 
-    peculiar e ao mesmo tempo familiar também... 
-    você percebe que está diante de três portas...`)  
-    
-        } else {
-    
-    alert(`Não foi dessa vez que você derrotou o antigo Exército de Esqueletos... tudo fica escuro e quieto...`)
-    
-        } */
-
 
     
 //----------------------------------------------
@@ -664,7 +591,7 @@ mais pesado, estranhamente isso não o incomoda...
 Tente outra vez!
 `)
 
-history.go(0);
+jogoRpg();
 
 }
 
@@ -678,9 +605,6 @@ Você tem ${player.hp} de HP de vida.
 A batalha contra ${inimigo.nome} vai começar!
 
 `);
-
-
-
 //------------------2º batalha-------------
 
 do {
@@ -709,7 +633,7 @@ do {
         if (atacar === "1") {
             alert(`Você escolheu o Ataque Simples!
         
-                Você tem ${player.hp} de HP de vida e ${player.dano} de Dano de ataque.
+                Você tem ${player.hp} de HP de vida.
         
                 Seu inimigo ${inimigo.nome} tem ${inimigo.hp} HP de Vida.
                 
@@ -824,14 +748,7 @@ do {
             }
         
         }
-    
-    } while (player.hp > 0 && inimigo.hp > 0);
-    
-    
-    if (inimigo.hp > 0) {
-    
-    do{
-    
+       
         alert(`Turno de ataque do inimigo ${inimigo.nome}...
         
             O inimigo ${inimigo.nome} vai desferir um ataque!
@@ -865,13 +782,16 @@ do {
     
     
         //---------------------------- Loop ---------------------------
-    } while (player.hp > 0 && esqueletos.vida > 0);
+ } while (player.hp > 0 && inimigo.hp > 0);
     
-    }
+    
     
     if (player.hp > 0 || inimigo.hp <= 0) {
     
-        alert(`O ${inimigo.nome} não mais nos assombrará! É hora de voltar a vila e comemorar com o povo...`);
+        alert(`Você ganhou o jogo!
+        Parabéns!
+        
+        O ${inimigo.nome} não mais nos assombrará! É hora de voltar a vila e comemorar com o povo...`);
     
        // alert(`Parabéns, você venceu a batalha contra ${inimigo.nome}, a equipe comemora pelo grande feito.`)
         
@@ -880,221 +800,17 @@ do {
     else if (player.hp <=0 || inimigo.hp > 0) { alert(`Por quantos séculos mais ${inimigo.nome} reinará nas sobras de nosso vale? Tudo fica escuro e quieto...`
         )
     
-        location.reload();
+        jogoRpg();
     
     } 
-    
 
+    alert(`Fim do jogo!`);
 
+    jogoRpg();
 
 //----------Final 2º batalha--------------------
 
-
-
-/*let escolha5;
-
-do {
-
-    escolha5 = prompt(`Você tem 2 caminhos para seguir!
-        
-        Escolha o caminho A ou o Caminho B para prosseguir.
-        
-        `).toUpperCase();
-
-    if(escolha5 !== "A" && escolha5 !== "B") {
-
-alert(`Opção inválida! Escolha a letra A, B ou C`);
-
-    }
-
-} while (escolha5 !== "A" && escolha5 !== "B")  */
-
-
-/*if (escolha5 === "A") {
-
-alert
-(`O ${inimigo.nome} não mais nos assombrará! 
-É hora de voltar a vila e comemorar com o povo...`)    
-
-} else {
-
-    alert(`
-Por quantos séculos mais ${inimigo.nome} 
-reinará nas sobras de nosso vale? 
-Tudo fica escuro e quieto...`)
-
-}*/
-
-//----------- Atacar -------------
-
-/*do {
-atacar = prompt(`
-"Seu turno, escolha um ataque: ataque 1, 2 ou 3"
-
-Digite uma opção abaixo:
-
-1 - Ataque Simples
-2 - Ataque Combo
-3 - Ataque Especial
-
-`)
-
-if (atacar !== "1" && atacar !== "2" && atacar !== "3") {
-
-    alert(`Opção inválida! Escolha o número 1, 2, ou 3`)
-
-}
-
-}  while (atacar !== "1" && atacar !== "2" && atacar !== "3");  */
- 
-/*
-if (atacar === "1") {
-    alert(`Você escolheu o Ataque 1!
-
-        Você tem ${player.hp} de HP de vida e ${player.dano} de Dano de ataque.
-
-        Seu inimigo ${inimigo.nome} tem ${inimigo.hp} HP de Vida e ${inimigo.dano} de Dano de Ataque.
-        
-        Clique em "Ok" para continuar!
-        
-        `);
-
-        inimigo.hp -= ataque1; //Diminui a quantidade de hp do inimigo
-        player.dano -= ataque1; //Diminui a quantidade de dano do player
-
-        alert(`
-"Você desferiu um ataque Simples com sucesso!" 
-O seu inimigo ${inimigo.nome} sofreu ${ataque1} de Dano de vida! Ainda restam ${inimigo.hp} pontos de Vida do inimigo...
-
-Você tem ${player.hp} de vida e ${player.dano} de Dano de Ataque.
-
-Seu inimigo tem ${inimigo.hp} de Vida e ${inimigo.dano} de Dano de Ataque.
-
-Clique em "Ok" para continuar!
-
-`)
-//----------------------------------------------------------------
-
-} else if (atacar === "2") {
-
-   let atacar2 = Math.floor(Math.random() * 6) + 1;
-
-   alert(`Você precisa jogar um dado para confirmar seu "Ataque Combo"!
-    Se o dado cair no número 1 ou 2, você erra o "Ataque combo", e
-    se for maior que 2, você acerta o "Ataque Combo".
-
-    Clique em "Ok" para jogar o dado!
-    
-    `)
-
-    alert(`O dado caiu no número ${atacar2}
-        
-Clique em "Ok" para continuar
-
-        `)
-
-   if(atacar2 > 2) {
-
-    inimigo.hp -= ataque2;
-    player.dano -= ataque2;
-
-    alert(`Você desferiu um Ataque Combo com sucesso! O inimigo ${inimigo.nome} sofreu ${ataque2} de Dano de Ataque!
-
-
-        Você tem ${player.hp} de HP de vida e ${player.dano} de Dano de ataque.
-        Seu inimigo ${inimigo.nome} tem ${inimigo.hp} HP de vida e ${inimigo.dano} de Dano de Ataque.
-
-        
-        Clique em "Ok" para continuar!`)
-
-    } else {
-
-       alert(`"Você desferiu um "Ataque Combo" mas errou. O ${inimigo.nome} não sofreu dano! Ainda restam ${inimigo.hp} pontos de vida..."`)
-    }
-
-}
-
-//--------------------------
-
-     else if (atacar === "3") {
-
-        let atacar3 = Math.floor(Math.random() * 6) + 1;
-
-        alert(`Você precisa jogar um dado para confirmar seu "Ataque Especial"!
-            Se o dado cair no número 1 ou 3, você erra o "Ataque Especial", e
-            se for maior que 3, você acerta o "Ataque Especial".
-        
-            Clique em "Ok" para jogar o dado!
-            
-            `)
-        
-            alert(`O dado caiu no número ${atacar3}
-                
-        Clique em "Ok" para continuar
-        
-                `)
-
-
-        if(atacar3 > 3) {
-
-            inimigo.hp -= ataque3;
-            player.dano -= ataque3;
-
-            alert(`Você desferiu um Ataque Especial com sucesso! O inimigo ${inimigo.nome} sofreu ${ataque3} de Dano de Ataque!
-
-
-                Você tem ${player.hp} de HP de vida e ${player.dano} de Dano de ataque.
-                Seu inimigo ${inimigo.nome} tem ${inimigo.hp} HP de vida e ${inimigo.dano} de Dano de Ataque.
-        
-                
-                Clique em "Ok" para continuar!`)
-
-    } else {
-
-    alert(`
-"Você desferiu um "Ataque Especial" mas errou. O ${inimigo.nome} não sofreu dano! Ainda restam ${inimigo.hp} pontos de vida..."`)
-        
-    }
-
-}   */
-
-//-------------------------------------------
-
-/*alert(`Turno do inimigo ${inimigo.nome}...
-    
-    O inimigo ${inimigo.nome} vai jogar o dado para desferir um ataque!
-    
-    `)
-
-
-let ataqueinimigo = Math.floor( Math.random() * 6) + 1;
-
-if (ataqueinimigo <= 5) {
-
-    player.hp -= inimigo.ataque.dano
-
-    alert(`O dado caiu no número ${ataqueinimigo}
-        
-        
-        ${inimigo.nome} usa o ataque ${inimigo.ataque.nome}, você perdeu ${inimigo.ataque.dano} pontos de vida e está com ${player.hp} de HP de vida.`)
-
-
-
-} else {
-   
-alert(`${inimigo.nome} usa o ataque ${inimigo.ataque.nome} mas falhou! Você continua com ${player.hp} de HP de vida.`)    
-
-} */
-
-
-
-
-
-
-
-
-
-}; // final da função jogarRpg
+}; // Final da função jogarRpg
 
 jogarRpg();
     
